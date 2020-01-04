@@ -41,16 +41,9 @@ export default {
     todo: ''
   }),
   computed: {
-    todos: () => [
-      {
-        id: 1,
-        name: 'Sample todo one'
-      },
-      {
-        id: 2,
-        name: 'Sample todo two'
-      }
-    ]
+    todos() {
+      return this.$store.getters['todos/getList']
+    }
   },
   created() {
     this.requireRules = [(v) => !!v || 'Required']
