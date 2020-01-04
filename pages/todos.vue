@@ -24,7 +24,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-row key="todo.id" v-for="todo in todos">
+        <v-row :key="todo.id" v-for="todo in todos">
           <v-col>
             {{ todo.name }}
           </v-col>
