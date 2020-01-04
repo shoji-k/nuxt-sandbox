@@ -56,6 +56,9 @@
           <v-btn color="primary" nuxt to="/inspire">
             Continue
           </v-btn>
+          <v-btn color="secondary" nuxt to="/todos">
+            Todos
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
