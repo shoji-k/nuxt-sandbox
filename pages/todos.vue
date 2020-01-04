@@ -19,7 +19,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-btn color="primary">save</v-btn>
+        <v-btn @click="add" color="primary">save</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -47,6 +47,14 @@ export default {
   },
   created() {
     this.requireRules = [(v) => !!v || 'Required']
+  },
+  methods: {
+    add() {
+      if (this.$refs.form.validate()) {
+        this.$store.dispatch('todos/add', { text: this.todo })
+        this.todo = ''
+      }
+    }
   }
 }
 </script>

@@ -10,7 +10,8 @@ export const state = () => ({
       name: 'Sample todo two',
       done: false
     }
-  ]
+  ],
+  maxId: 2
 })
 
 export const getters = {
@@ -19,4 +20,19 @@ export const getters = {
   }
 }
 
-export const mutations = {}
+export const mutations = {
+  addTodo(state, { text }) {
+    state.maxId += 1
+    state.list.push({
+      id: state.maxId,
+      name: text,
+      done: false
+    })
+  }
+}
+
+export const actions = {
+  add({ commit }, { text }) {
+    commit('addTodo', { text })
+  }
+}
